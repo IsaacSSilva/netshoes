@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "ES2023"
+    ],
+    "target": "ES2022",
+    "module": "Node16",
+    "moduleDetection": "force",
+    "allowJs": true,
+    /* Bundler mode */
+    // "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    // "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    /* Linting */
+    "skipLibCheck": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
