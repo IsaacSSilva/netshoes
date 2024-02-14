@@ -11,8 +11,46 @@ datasource db {
 }
 
 model Users {
-  id      String @id @default(cuid())
-  name    String
-  surname String
-  email   String @unique
+  id        String   @id @default(cuid())
+  name      String
+  surname   String
+  email     String   @unique
+  telephone Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  addressee Addressee[]
+}
+
+model Addressee {
+  id             String @id
+  usersId        String
+  addressee      String
+  street_address String
+  city           String
+  state          String
+  zip_code       Int
+
+  Users Users @relation(fields: [usersId], references: [id])
+}
+
+model Item {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  price       Float
+  sort        String
+  sale        Float?
+  promotion   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+
+  promotions Promotion[]
+}
+
+model Promotion {
+  id Int @id @default(autoincrement())
+
+  Item   Item   @relation(fields: [itemId], references: [id])
+  itemId String
 }
