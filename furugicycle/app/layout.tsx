@@ -2,10 +2,14 @@ import type { Metadata } from 'next'
 import { Inter, Roboto_Flex } from 'next/font/google'
 import './globals.css'
 
-const roboto = Roboto_Flex({ subsets: ['latin'], display: 'fallback' })
+const roboto = Roboto_Flex({
+  subsets: ['latin'],
+  display: 'block',
+  variable: '--roboto-ramily'
+})
 
 export const metadata: Metadata = {
-  title: 'Furugi'
+  title: 'Furugi | 古着'
   // description: "",
 }
 
