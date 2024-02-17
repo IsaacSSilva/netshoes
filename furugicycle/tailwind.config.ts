@@ -19,7 +19,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        roboto: 'var(--roboto-ramily)'
+        roboto: 'var(--roboto-ramily)',
+        inter: 'var(--inter-ramily)'
       },
       colors: {
         border: 'hsl(var(--border))',

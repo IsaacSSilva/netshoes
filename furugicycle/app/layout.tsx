@@ -4,8 +4,14 @@ import './globals.css'
 
 const roboto = Roboto_Flex({
   subsets: ['latin'],
-  display: 'block',
+  display: 'auto',
   variable: '--roboto-ramily'
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'auto',
+  variable: '--inter-ramily'
 })
 
 export const metadata: Metadata = {
@@ -20,7 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-BR'>
-      <body className={roboto.className}>{children}</body>
+      <body
+        className={`${roboto.className} ${roboto.variable} ${inter.variable}`}
+      >
+        {children}
+      </body>
     </html>
   )
 }
