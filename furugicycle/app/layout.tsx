@@ -4,13 +4,13 @@ import './globals.css'
 
 const roboto = Roboto_Flex({
   subsets: ['latin'],
-  display: 'auto',
+  display: 'block',
   variable: '--roboto-ramily'
 })
 
 const inter = Inter({
   subsets: ['latin'],
-  display: 'auto',
+  display: 'block',
   variable: '--inter-ramily'
 })
 
