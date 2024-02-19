@@ -4,7 +4,7 @@ import { NavigationMenuDemo } from '../components/header/Menu'
 export default function Home() {
   return (
     <main className='w-full h-screen flex flex-col'>
-      <header className='w-full flex fixed justify-between '>
+      <header className='w-full flex fixed justify-between'>
         <NavigationMenuDemo />
         <ShoppingcartMode />
       </header>

@@ -24,7 +24,7 @@ export const ShoppingcartMode = () => {
   return (
     <HoverCard>
       <Sheet>
-        <SheetTrigger className='mx-5 my-2.5 w-fit h-fit'>
+        <SheetTrigger className='fixed top-0 right-0 h-fit mx-5 my-2.5 w-fit '>
           <HoverCardTrigger>
             <ShoppingCart className='size-7 mt-2 mr-2' />
           </HoverCardTrigger>
