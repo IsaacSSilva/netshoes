@@ -8,10 +8,7 @@ interface ICard {
 
 export const CardBaseStore = ({ title, valor, children }: ICard) => {
   return (
-    <div
-      key={title}
-      className='w-64 h-[444px] border border-zinc-900/50 overflow-hidden rounded-md'
-    >
+    <div className='w-64 h-[444px] border border-zinc-900/50 overflow-hidden rounded-md'>
       {children}
 
       <div className='px-2 py-1 flex flex-col justify-around gap-1'>

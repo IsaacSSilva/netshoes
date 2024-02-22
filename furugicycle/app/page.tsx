@@ -23,7 +23,11 @@ export default function Home() {
 
       <Store.Root>
         {item.Item.map(item => (
-          <Store.CardBase title={item.itemTitle} valor={item.valor}>
+          <Store.CardBase
+            title={item.itemTitle}
+            valor={item.valor}
+            key={item.itemTitle}
+          >
             <Store.Banner
               title={item.itemTitle}
               imgPrimare={item.itemImg}
