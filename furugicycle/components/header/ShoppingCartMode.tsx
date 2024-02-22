@@ -16,10 +16,10 @@ import {
 } from '@/components/ui/hover-card'
 
 import { TableDemo } from './table_teste'
-import { pedidoItem } from '../apiFakeForItem'
+import item from '../../components/apiFakeForItem.json'
 
 export const ShoppingcartMode = () => {
-  let contItem = pedidoItem.length
+  let contItem = item.Item.length
 
   return (
     <HoverCard>

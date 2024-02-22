@@ -10,7 +10,7 @@ import {
   TableRow
 } from '@/components/ui/table'
 import Image from 'next/image'
-import { pedidoItem } from '../apiFakeForItem'
+import item from '../../components/apiFakeForItem.json'
 import { Button } from '../ui/button'
 
 export function TableDemo() {
@@ -23,10 +23,10 @@ export function TableDemo() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {pedidoItem.map(item => (
+          {item.Item.map(item => (
             <TableRow key={item.itemImg}>
               <TableCell>
-                <Image
+                <img
                   alt='imagem de compra'
                   src={item.itemImg}
                   width={64}
@@ -54,9 +54,9 @@ export function TableDemo() {
           <div>Total</div>
           <div>
             R$
-            {pedidoItem.length <= 1
-              ? Number(pedidoItem[0].valor)
-              : Number(pedidoItem[0].valor) + Number(pedidoItem[0].valor)}
+            {item.Item.length <= 1
+              ? Number(item.Item[0].valor)
+              : Number(item.Item[0].valor) + Number(item.Item[0].valor)}
           </div>
         </div>
         <div className='flex justify-between'>
