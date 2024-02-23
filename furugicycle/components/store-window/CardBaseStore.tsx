@@ -15,7 +15,7 @@ export const CardBaseStore = ({ title, valor, children }: ICard) => {
         <p className='text-nowrap overflow-hidden text-xl font-extralight font-inter capitalize'>
           {title}
         </p>
-        <div className='flex w-full justify-between text-sm font-roboto_mono font-thin opacity-90 ml-1'>
+        <div className='flex w-full justify-between text-sm font-roboto_mono font-thin ml-1'>
           R${valor}
           <img
             src='./furugi.png'
