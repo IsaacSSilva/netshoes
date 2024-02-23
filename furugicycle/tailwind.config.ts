@@ -20,6 +20,7 @@ const config = {
     extend: {
       fontFamily: {
         roboto: 'var(--roboto-ramily)',
+        roboto_mono: 'var(--roboto_mono-ramily)',
         inter: 'var(--inter-ramily)'
       },
       colors: {

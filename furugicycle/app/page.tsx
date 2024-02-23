@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <main className='w-full h-[70vh] flex flex-col'>
-        <header className='w-full flex fixed justify-between'>
+        <header className='w-full flex fixed justify-between z-10'>
           <NavigationMenuDemo />
           <ShoppingcartMode />
         </header>

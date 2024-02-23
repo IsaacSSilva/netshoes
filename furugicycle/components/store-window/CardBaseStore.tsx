@@ -8,14 +8,21 @@ interface ICard {
 
 export const CardBaseStore = ({ title, valor, children }: ICard) => {
   return (
-    <div className='w-64 h-[444px] border border-zinc-900/50 overflow-hidden rounded-md'>
+    <div className='w-64 h-fit border border-zinc-900/50 overflow-hidden rounded-md'>
       {children}
 
-      <div className='px-2 py-1 flex flex-col justify-around gap-1'>
-        <p className='text-nowrap overflow-hidden text-xl font-thin font-inter capitalize'>
+      <div className='px-2.5 py-1 flex flex-col justify-around '>
+        <p className='text-nowrap overflow-hidden text-xl font-normal font-inter capitalize'>
           {title}
         </p>
-        <div className='text-sm font-mono font-thin ml-1'>R${valor}</div>
+        <div className='flex w-full justify-between text-sm font-roboto_mono font-light opacity-90 ml-1'>
+          R${valor}
+          <img
+            src='./furugi.png'
+            alt=''
+            className='size-10 absolute -translate-y-6 translate-x-48 opacity-80 '
+          />
+        </div>
       </div>
     </div>
   )

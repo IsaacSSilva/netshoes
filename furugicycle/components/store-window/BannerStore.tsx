@@ -29,7 +29,7 @@ export const BannerStore = ({
               src={imgSecundare}
               width={307}
               height={384}
-              className='w-[307px] h-96  bg-cover  bg-no-repeat bg-center'
+              className='w-[307px] h-96  bg-cover -z-50 bg-no-repeat bg-center'
             />
           </div>
         ) : null}

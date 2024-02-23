@@ -17,6 +17,7 @@ import {
 
 import { TableDemo } from './table_teste'
 import item from '../../components/apiFakeForItem.json'
+import { Button } from '../ui/button'
 
 export const ShoppingcartMode = () => {
   let contItem = item.Item.length
@@ -37,13 +38,23 @@ export const ShoppingcartMode = () => {
             ''
           )}
         </SheetTrigger>
-        <SheetContent>
+        <SheetContent className='h-full flex flex-col flex-1 justify-between'>
           <SheetHeader>
             <SheetTitle>You {contItem} item and car</SheetTitle>
-            <SheetDescription className='h-[90vh]'>
+            <SheetDescription>
               <TableDemo />
             </SheetDescription>
           </SheetHeader>
+          <div>
+            <div className='w-full py-5 flex justify-between items-center '>
+              <div>Total</div>
+              <div>R$ 999</div>
+            </div>
+            <div className='flex justify-between'>
+              <Button variant='ghost'>Mais Detalhes</Button>
+              <Button className='font-bold font-inter'>Finalizar</Button>
+            </div>
+          </div>
         </SheetContent>
       </Sheet>
 
