@@ -1,5 +1,3 @@
-import { ShoppingcartMode } from '@/components/header/ShoppingCartMode'
-import { NavigationMenuDemo } from '../components/header/Menu'
 import item from '../components/apiFakeForItem.json'
 import { Store } from '@/components/store-window'
 
@@ -7,10 +5,6 @@ export default function Home() {
   return (
     <>
       <main className='w-full h-[70vh] flex flex-col'>
-        <header className='w-full flex fixed justify-between z-10'>
-          <NavigationMenuDemo />
-          <ShoppingcartMode />
-        </header>
         <div className='w-full h-[55vh] flex justify-center items-center'>
           <h1 className='text-7xl font-light font-inter'>
             Futugi
