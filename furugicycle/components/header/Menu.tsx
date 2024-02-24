@@ -56,10 +56,10 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function NavigationMenuDemo() {
   return (
-    <NavigationMenu className='pt-2.5'>
+    <NavigationMenu className='pt-2.5 pl-1.5 '>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className='uppercase'>
+          <NavigationMenuTrigger className='uppercase select-none'>
             Home
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -100,7 +100,7 @@ export function NavigationMenuDemo() {
 
         {/* 2 */}
         <NavigationMenuItem>
-          <NavigationMenuTrigger className='uppercase'>
+          <NavigationMenuTrigger className='uppercase select-none'>
             destaques
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -117,7 +117,7 @@ export function NavigationMenuDemo() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem className='uppercase md:block hidden'>
+        <NavigationMenuItem className='uppercase md:block hidden select-none'>
           <Link href='/docs' legacyBehavior passHref>
             <NavigationMenuLink>vintage</NavigationMenuLink>
           </Link>

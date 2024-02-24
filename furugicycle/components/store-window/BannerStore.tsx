@@ -4,7 +4,7 @@ interface ICardBanner {
   id: string
   title: string
   imgPrimare: string
-  imgSecundare: string
+  imgSecundare?: string
 }
 
 export const BannerStore = ({
@@ -14,7 +14,7 @@ export const BannerStore = ({
   imgSecundare
 }: ICardBanner) => {
   return (
-    <Link href={`/${id}`}>
+    <Link href={`/${id}`} className='select-none '>
       <div className='md:w-[307px] w-32 md:h-96 h-[160px] bg-emerald-500  overflow-hidden'>
         <img
           alt={title}

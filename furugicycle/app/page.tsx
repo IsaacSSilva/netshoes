@@ -4,7 +4,7 @@ import { Store } from '@/components/store-window'
 export default function Home() {
   return (
     <>
-      <main className='w-full h-[70vh] flex flex-col'>
+      <main className='w-full h-[70vh] flex flex-col select-none'>
         <div className='w-full h-[55vh] flex justify-center items-center'>
           <h1 className='text-7xl font-light font-inter'>
             Futugi

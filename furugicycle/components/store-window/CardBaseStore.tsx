@@ -15,14 +15,14 @@ export const CardBaseStore = ({ title, valor, children }: ICard) => {
         <p className='text-nowrap overflow-hidden md:text-xl text-base font-light font-inter capitalize'>
           {title}
         </p>
-        <div className='flex w-full justify-between text-sm font-roboto_mono font-extralight ml-0.5 '>
+        <div className='flex w-full justify-between text-sm font-roboto_mono font-extralight ml-0.5 select-none'>
           R${valor}
           <img
             src='./furugi.png'
             alt=''
-            className='size-10 -translate-y-6 translate-x-48 opacity-80 absolute hidden md:block'
+            className='size-10 -translate-y-6 translate-x-48 opacity-80 absolute hidden md:block select-none'
           />
-          <div className='size-5 border-r border-b border-black/80 -mt-1 mr-1 md:mr-0 rounded-br block md:hidden' />
+          <div className='size-5 border-r border-b border-black/80 -mt-1 mr-1 md:mr-0 rounded-br block md:hidden select-none' />
         </div>
       </div>
     </div>

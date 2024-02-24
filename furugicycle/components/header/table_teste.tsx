@@ -4,17 +4,18 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableFooter,
+  // TableFooter,
   TableHead,
   TableHeader,
   TableRow
 } from '@/components/ui/table'
 import Image from 'next/image'
 import item from '../../components/apiFakeForItem.json'
+import Link from 'next/link'
 
 export function TableDemo() {
   return (
-    <Table className='h-full p-2 overflow-y-scroll'>
+    <Table className='h-full  mb-16'>
       <TableHeader>
         <TableRow>
           <TableHead className='w-[100px]'>Item</TableHead>
@@ -24,13 +25,15 @@ export function TableDemo() {
         {item.Item.map(item => (
           <TableRow key={item.itemImg}>
             <TableCell>
-              <img
-                alt='imagem de compra'
-                src={item.itemImg}
-                width={64}
-                height={0}
-                className='w-16 rounded shadow shadow-black/20 bg-cover'
-              />
+              <Link href={`/${item.id}`} className='select-none'>
+                <img
+                  alt='imagem de compra'
+                  src={item.itemImg}
+                  width={64}
+                  height={0}
+                  className='w-16 rounded shadow shadow-black/20 bg-cover'
+                />
+              </Link>
             </TableCell>
             <TableCell
               colSpan={2}
@@ -38,7 +41,7 @@ export function TableDemo() {
             >
               {item.itemTitle}
             </TableCell>
-            <TableCell className='text-left'>
+            <TableCell className='text-left select-none'>
               R$
               {item.valor}
             </TableCell>
