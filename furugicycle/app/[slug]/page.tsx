@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button'
 import item from '../../components/apiFakeForItem.json'
 import { Plus, Siren } from 'lucide-react'
+import { NextRouterButton } from '../../components/NextRoutButtton'
 import {
   HoverCard,
   HoverCardContent,
@@ -29,8 +30,8 @@ export default function Item({ params }: { params: { slug: string } }) {
             </div>
           </section>
 
-          <section className='md:h-full h-[30%] md:mt-0 mt-14 flex justify-center items-center '>
-            <div className='md:w-[600px] w-[500px] md:h-[680px] h-full m-auto bg-cover bg-center overflow-hidden'>
+          <section className='md:h-full h-[30%] md:mt-0 mt- flex justify-center items-center '>
+            <div className='md:w-[600px] w-[500px] md:h-[680px] h-[400px] m-auto bg-cover bg-center overflow-hidden'>
               <img
                 src={Item.itemImg}
                 alt={Item.itemTitle}
@@ -45,13 +46,15 @@ export default function Item({ params }: { params: { slug: string } }) {
           </section>
 
           <section className='md:w-1/3 w-full md:m-auto md:mx-5 flex flex-col justify-center  items-center'>
-            <div className='md:w-96 w-full  flex flex-col gap-10 p-5 md:border-2 border-black rounded'>
+            <NextRouterButton />
+
+            <div className='md:w-96 w-full md:bg-transparent bg-white/65 flex flex-col gap-10 p-5 md:border-2 border-black md:rounded rounded-t-xl'>
               <div className='flex justify-between p-2'>
                 <div>
                   <h1 className='font-inter md:text-xl text-lg font-semibold capitalize'>
                     {Item.itemTitle}
                   </h1>
-                  <p className='font-roboto_mono text-sm font-light'>
+                  <p className='font-roboto_mono text-sm font-light select-none'>
                     R${Item.valor}
                   </p>
                 </div>
