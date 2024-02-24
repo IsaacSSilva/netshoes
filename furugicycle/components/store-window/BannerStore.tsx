@@ -4,7 +4,7 @@ interface ICardBanner {
   id: string
   title: string
   imgPrimare: string
-  imgSecundare?: string
+  imgSecundare: string
 }
 
 export const BannerStore = ({
