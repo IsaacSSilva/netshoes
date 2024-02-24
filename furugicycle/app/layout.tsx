@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import { Inter, Roboto_Flex, Roboto_Mono } from 'next/font/google'
 import './globals.css'
 
+import { ShoppingcartMode } from '@/components/header/ShoppingCartMode'
+import { NavigationMenuDemo } from '../components/header/Menu'
+
 const roboto = Roboto_Flex({
   subsets: ['latin'],
   display: 'block',
@@ -34,6 +37,10 @@ export default function RootLayout({
       <body
         className={`${roboto.className} ${roboto.variable} ${roboto_mono.variable} ${inter.variable}`}
       >
+        <header className='w-full flex fixed justify-between z-10'>
+          <NavigationMenuDemo />
+          <ShoppingcartMode />
+        </header>
         {children}
       </body>
     </html>
