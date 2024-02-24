@@ -14,7 +14,7 @@ export const BannerStore = ({
   imgSecundare
 }: ICardBanner) => {
   return (
-    <Link href={`/item/${id}`}>
+    <Link href={`/${id}`}>
       <div className='md:w-[307px] w-32 md:h-96 h-[160px] bg-emerald-500  overflow-hidden'>
         <img
           alt={title}
