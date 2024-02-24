@@ -58,8 +58,19 @@ export const ShoppingcartMode = () => {
         </SheetContent>
       </Sheet>
 
-      <HoverCardContent className='w-[350px] max-h-[500px] overflow-hidden overflow-y-scroll'>
-        <TableDemo />
+      <HoverCardContent className=' w-full h-[650px] overflow-hidden'>
+        <div className='w-[350px] max-h-[500px] overflow-y-scroll'>
+          <TableDemo />
+        </div>
+
+        <div className='w-full py-5 flex justify-between items-center '>
+          <div>Total</div>
+          <div>R$ 999</div>
+        </div>
+        <div className='flex justify-between'>
+          <Button variant='ghost'>Mais Detalhes</Button>
+          <Button className='font-bold font-inter'>Finalizar</Button>
+        </div>
       </HoverCardContent>
     </HoverCard>
   )
