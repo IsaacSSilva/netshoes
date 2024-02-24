@@ -25,7 +25,7 @@ export const ShoppingcartMode = () => {
   return (
     <HoverCard>
       <Sheet>
-        <SheetTrigger className='fixed top-0 right-0 h-fit mx-5 my-2.5 w-fit '>
+        <SheetTrigger className='fixed top-0 right-0 h-fit mx-5 my-2.5 w-fit select-none'>
           <HoverCardTrigger>
             <ShoppingCart className='size-7 mt-2 mr-2' />
           </HoverCardTrigger>
@@ -38,21 +38,28 @@ export const ShoppingcartMode = () => {
             ''
           )}
         </SheetTrigger>
-        <SheetContent className='h-full flex flex-col flex-1 justify-between'>
+        <SheetContent className='h-screen overflow-hidden overflow-y-scroll flex flex-col px-2.5 pt-5 justify-between'>
           <SheetHeader>
             <SheetTitle>You {contItem} item and car</SheetTitle>
-            <SheetDescription>
+            <SheetDescription className='overflow-y-hidden'>
               <TableDemo />
             </SheetDescription>
           </SheetHeader>
-          <div>
-            <div className='w-full py-5 flex justify-between items-center '>
-              <div>Total</div>
+          <div className='md:w-[340px] w-[65%] fixed bottom-0 bg-white m-auto flex flex-col justify-between items-center'>
+            <div className='w-full py-2.5 flex justify-between select-none'>
+              <div>Total:</div>
               <div>R$ 999</div>
             </div>
-            <div className='flex justify-between'>
-              <Button variant='ghost'>Mais Detalhes</Button>
-              <Button className='font-bold font-inter'>Finalizar</Button>
+            <div className='w-full py-2 flex justify-between '>
+              <Button
+                variant='ghost'
+                className='w-fit p-0 md:text-base text-xs md:font-normal font-semibold'
+              >
+                + Detalhes
+              </Button>
+              <Button className='md:font-black font-bold font-inter w-fit md:text-base text-sm'>
+                Finalizar
+              </Button>
             </div>
           </div>
         </SheetContent>
@@ -63,11 +70,11 @@ export const ShoppingcartMode = () => {
           <TableDemo />
         </div>
 
-        <div className='w-full py-5 flex justify-between items-center '>
+        <div className='w-full py-5 px-2 flex justify-between items-center '>
           <div>Total</div>
           <div>R$ 999</div>
         </div>
-        <div className='flex justify-between'>
+        <div className='flex p-2 justify-between items-center'>
           <Button variant='ghost'>Mais Detalhes</Button>
           <Button className='font-bold font-inter'>Finalizar</Button>
         </div>
