@@ -30,6 +30,37 @@
         "itemImgSecundari": "https://i.postimg.cc/jS5LF0LB/photo-one-lowcamera.jpg",
       "itemTitle": "tais mania",
       "valor": "56"
+    },
+    {
+      "id": "three",
+      "itemImg": "https://i.postimg.cc/kGsgTf9n/photo-three-focus.jpg",
+      "itemImgSecundari": "https://i.postimg.cc/s2G13YPc/photo-three-lowcamera.jpg",
+      "itemTitle": "levis - 555",
+      "valor": "200"
+    },
+    {
+      "id": "two",
+      "itemImg":
+        "https://i.postimg.cc/yxsNh2MQ/photo-two-focus.jpg",
+        "itemImgSecundari": "https://i.postimg.cc/3xcdMSGN/photo-two-lowcamera.jpg",
+      "itemTitle": "jaqueta zara",
+      "valor": "150"
+    },
+    {
+      "id": "four",
+      "itemImg":
+        "https://i.postimg.cc/kXw2sXXx/photo-four-focus.jpg",
+        "itemImgSecundari": "https://i.postimg.cc/PxGJJC2k/photo-four-lowcamera.jpg",
+      "itemTitle": "saudade 95 - 96",
+      "valor": "68"
+    },
+    {
+      "id": "one",
+      "itemImg":
+        "https://i.postimg.cc/2646ZCKL/photo-one-focus.jpg",
+        "itemImgSecundari": "https://i.postimg.cc/jS5LF0LB/photo-one-lowcamera.jpg",
+      "itemTitle": "tais mania",
+      "valor": "56"
     }
   ]
 }
