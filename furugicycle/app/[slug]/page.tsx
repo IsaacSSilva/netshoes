@@ -1,8 +1,15 @@
+'use client'
+
 import { Button } from '@/components/ui/button'
 import item from '../../components/apiFakeForItem.json'
-import { Plus } from 'lucide-react'
+import { Plus, Siren } from 'lucide-react'
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger
+} from '@/components/ui/hover-card'
 
-export default async function Item({ params }: { params: { slug: string } }) {
+export default function Item({ params }: { params: { slug: string } }) {
   const pedidoItem = item.Item.filter(Item => Item.id === params.slug)
   const Item = pedidoItem[0]
 
@@ -59,7 +66,27 @@ export default async function Item({ params }: { params: { slug: string } }) {
                   ea amet, molestiae aliquid libero vitae magni laborum quod
                   hic. Ipsa aut ipsam vel!
                 </p>
-                <p className='capitalize font-inter font-light'>Peca Unica.</p>
+                <HoverCard>
+                  <HoverCardTrigger>
+                    <div className='w-fit p-1.5 pl-3 pr-0.5 text-sm flex gap-2 justify-center items-end rounded-bl-lg rounded-r-lg bg-zinc-950/90 text-white no-underline select-none cursor-pointer'>
+                      <Siren className='size-5 text-red-600' />
+                      <p className='capitalize font-roboto_mono font-medium'>
+                        Peca Unica.
+                      </p>
+                    </div>
+                  </HoverCardTrigger>
+
+                  <HoverCardContent className=' w-72 h-fit space-y-1 space-x-0.5 overflow-hidden rounded-bl-2xl rounded-r-2xl rounded-tl-none bg-zinc-950/90 border-none shadow-md shadow-black/50 text-sm font-inter text-white'>
+                    <h3 className='font-roboto_mono font-black text-red-600'>
+                      Atencao
+                    </h3>
+                    <p>Todas as nossas pecas sao uncas, inclusive esta!.</p>
+                    <p className='capitalize'>
+                      unico
+                      <strong> tamanho</strong> & <strong>peca</strong> unica.
+                    </p>
+                  </HoverCardContent>
+                </HoverCard>
               </div>
 
               <div className='flex gap-2.5 font-roboto font-semibold'>
