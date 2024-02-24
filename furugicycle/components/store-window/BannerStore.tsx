@@ -1,18 +1,20 @@
 import Link from 'next/link'
 
 interface ICardBanner {
+  id: string
   title: string
   imgPrimare: string
   imgSecundare?: string
 }
 
 export const BannerStore = ({
+  id,
   title,
   imgPrimare,
   imgSecundare
 }: ICardBanner) => {
   return (
-    <Link href={title}>
+    <Link href={`/item/${id}`}>
       <div className='md:w-[307px] w-32 md:h-96 h-[160px] bg-emerald-500  overflow-hidden'>
         <img
           alt={title}

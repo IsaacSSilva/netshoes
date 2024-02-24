@@ -1,6 +1,6 @@
 import { ShoppingcartMode } from '@/components/header/ShoppingCartMode'
 import { NavigationMenuDemo } from '../components/header/Menu'
-import item from './apiFakeForItem.json'
+import item from '../components/apiFakeForItem.json'
 import { Store } from '@/components/store-window'
 
 export default function Home() {
@@ -29,6 +29,7 @@ export default function Home() {
             key={item.itemTitle}
           >
             <Store.Banner
+              id={item.id}
               title={item.itemTitle}
               imgPrimare={item.itemImg}
               imgSecundare={item.itemImgSecundari}

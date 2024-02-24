@@ -16,7 +16,7 @@ import {
 } from '@/components/ui/hover-card'
 
 import { TableDemo } from './table_teste'
-import item from '../../components/apiFakeForItem.json'
+import item from '../apiFakeForItem.json'
 import { Button } from '../ui/button'
 
 export const ShoppingcartMode = () => {
