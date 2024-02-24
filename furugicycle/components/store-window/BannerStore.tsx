@@ -13,23 +13,23 @@ export const BannerStore = ({
 }: ICardBanner) => {
   return (
     <Link href={title}>
-      <div className='w-[307px] h-96 overflow-hidden'>
+      <div className='md:w-[307px] w-32 md:h-96 h-[160px] bg-emerald-500  overflow-hidden'>
         <img
           alt={title}
           src={imgPrimare}
           width={307}
           height={384}
-          className='w-[307px] h-96 bg-cover  bg-no-repeat bg-center'
+          className='md:w-[307px] w-32 md:h-96  bg-cover  bg-no-repeat bg-center'
         />
 
         {imgSecundare ? (
-          <div className='h-[768px] bg-transparent flex items-end -translate-y-[768px] hover:-translate-y-96 transition-transform duration-300 ease-in delay-100'>
+          <div className='h-[768px] relative bg-transparent flex items-end -translate-y-[768px] hover:-translate-y-96 transition-transform duration-300 ease-in delay-300'>
             <img
               alt={title}
               src={imgSecundare}
               width={307}
               height={384}
-              className='w-[307px] h-96  bg-cover -z-50 bg-no-repeat bg-center'
+              className='md:w-[307px] w-32 md:h-96 bg-cover bg-no-repeat bg-center'
             />
           </div>
         ) : null}
