@@ -11,7 +11,8 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "dev": "tsx watch src/http/server.ts"
+    "dev": "tsx watch src/http/server.ts",
+    "vercerl-build": "npx prisma migrate deploy"
   },
   "type": "module",
   "dependencies": {
