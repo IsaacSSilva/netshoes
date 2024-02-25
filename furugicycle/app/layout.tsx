@@ -42,6 +42,7 @@ export default function RootLayout({
           <ShoppingcartMode />
         </header>
         {children}
+        <Footer />
       </body>
     </html>
   )
