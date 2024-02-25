@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "module": "src/http/server.ts",
+  "module": "server.ts",
   "devDependencies": {
     "@types/bun": "latest",
     "@types/node": "^20.11.17",
@@ -11,8 +11,7 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "dev": "tsx watch src/http/server.ts",
-    "vercerl-build": "npx prisma migrate deploy"
+    "dev": "tsx watch src/http/server.ts"
   },
   "type": "module",
   "dependencies": {
