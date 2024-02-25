@@ -1,6 +1,6 @@
 {
   "name": "server",
-  "module": "server.ts",
+  "module": "src/http/server.ts",
   "devDependencies": {
     "@types/bun": "latest",
     "@types/node": "^20.11.17",

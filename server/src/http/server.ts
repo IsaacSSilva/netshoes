@@ -18,6 +18,10 @@ app.register(routerPrivateItem.get.All)
 app.register(routerPrivateItem.delete)
 app.register(routerPrivateItem.up)
 
+app.get('/', () => {
+  return 'Hello'
+})
+
 app.listen({ port: 3333 }).then(() => {
   console.log('Runner Server HTTP! 🔥')
 })
