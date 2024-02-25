@@ -4,6 +4,7 @@ import './globals.css'
 
 import { ShoppingcartMode } from '@/components/header/ShoppingCartMode'
 import { NavigationMenuDemo } from '../components/header/Menu'
+import { Footer } from '@/components/footer/Footer'
 
 const roboto = Roboto_Flex({
   subsets: ['latin'],
@@ -42,6 +43,7 @@ export default function RootLayout({
           <ShoppingcartMode />
         </header>
         {children}
+
         <Footer />
       </body>
     </html>
