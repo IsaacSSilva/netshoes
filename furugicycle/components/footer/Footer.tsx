@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className='w-full h-[15vh] flex md:flex-row-reverse gap-5 md:gap-0 flex-col justify-center md:justify-between md:px-5 items-center bg-zinc-400/10 text-zinc-500 mt-20 text-sm font-inter'>
+    <footer className='w-full h-[15vh] flex md:flex-row-reverse gap-5 md:gap-0 flex-col justify-center md:justify-between md:px-5 items-center bg-zinc-400/10 text-zinc-500 text-sm font-inter'>
       <div>
         <ul className='list-none flex gap-5'>
           <li>About</li>
