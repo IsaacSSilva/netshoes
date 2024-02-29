@@ -10,7 +10,7 @@ export async function deleteItem(app: FastifyInstance) {
 
     const { id } = deleteItem.parse(request.params)
 
-    const item = await prisma.item.delete({
+    await prisma.item.delete({
       where: {
         id
       }

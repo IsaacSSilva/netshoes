@@ -1,7 +1,7 @@
-import { creatUsers } from './router-public/creat-users.js'
-import { deleteUsers } from './router-public/delete-users.js'
+import { creatClients } from './router-public/creat-clients.js'
+import { deleteClients } from './router-public/delete-clients.js'
 
 export const routerPublicUser = {
-  delete: deleteUsers,
-  creat: creatUsers
+  delete: deleteClients,
+  creat: creatClients
 }

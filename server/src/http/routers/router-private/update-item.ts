@@ -11,18 +11,18 @@ export async function updateItem(app: FastifyInstance) {
     const updateItem = z.object({
       title: z.string().min(3).optional(),
       description: z.string().min(3).optional(),
-      price: z.number().optional(),
-      sort: z.string().min(3).optional(),
-      sale: z.number().optional(),
-      promotion: z.boolean().optional()
+      piece: z.number().optional().optional(),
+      imageURL: z.string().array().optional(),
+      about: z.string().optional()
     })
 
-    const { title, description, price, sort, sale, promotion } =
-      updateItem.parse(request.body)
+    const { title, description, piece, imageURL, about } = updateItem.parse(
+      request.body
+    )
 
     const { id } = idItem.parse(request.params)
 
-    if (title || description || price || sort || sale || promotion) {
+    if (title || description || piece || imageURL || about) {
       const item = await prisma.item.update({
         where: {
           id
@@ -30,10 +30,9 @@ export async function updateItem(app: FastifyInstance) {
         data: {
           title,
           description,
-          price,
-          sort,
-          sale,
-          promotion
+          piece,
+          imageURL,
+          about
         }
       })
       return reply.status(200).send(item)

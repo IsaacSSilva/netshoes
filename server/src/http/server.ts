@@ -1,18 +1,18 @@
 import fastify from 'fastify'
 import {
   routerPrivateItem,
-  routerPrivateUser
+  routerPrivateClient
 } from './routers/routers-vendor.js'
-import { routerPublicUser } from './routers/routers-public.js'
+import { routerPublicClients } from './routers/routers-public.js'
 
 const app = fastify()
 
 /* routers Public */
-app.register(routerPublicUser.creat)
-// app.register(routerPublicUser.delete)
+app.register(routerPublicClients.creat)
+app.register(routerPublicClients.delete)
 
 /* routers private */
-app.register(routerPrivateUser.get)
+app.register(routerPrivateClient.get)
 app.register(routerPrivateItem.creat)
 app.register(routerPrivateItem.get.All)
 app.register(routerPrivateItem.delete)

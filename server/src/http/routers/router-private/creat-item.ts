@@ -7,18 +7,22 @@ export async function creatItem(app: FastifyInstance) {
     const creatItem = z.object({
       title: z.string(),
       description: z.string(),
-      price: z.number(),
-      sort: z.string()
+      piece: z.number().int(),
+      imageURL: z.string().array(),
+      about: z.string()
     })
 
-    const { title, description, price, sort } = creatItem.parse(request.body)
+    const { title, description, imageURL, about, piece } = creatItem.parse(
+      request.body
+    )
 
     const item = await prisma.item.create({
       data: {
         title,
+        imageURL,
         description,
-        price,
-        sort
+        about,
+        piece
       }
     })
 

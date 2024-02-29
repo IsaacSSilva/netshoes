@@ -2,21 +2,21 @@ import type { FastifyInstance } from 'fastify'
 import { prisma } from '../../../lib/prisma.js'
 import { z } from 'zod'
 
-export async function deleteUsers(app: FastifyInstance) {
+export async function deleteClients(app: FastifyInstance) {
   app.delete('/profile/:id', async (request, reply) => {
-    const userId = z.object({
+    const clientId = z.object({
       id: z.string().cuid()
     })
 
-    const UserPermission = z.object({
+    const clientPermission = z.object({
       permission: z.boolean()
     })
 
-    const { id } = userId.parse(request.params)
-    const { permission } = UserPermission.parse(request.body)
+    const { id } = clientId.parse(request.params)
+    const { permission } = clientPermission.parse(request.body)
 
     if (permission) {
-      await prisma.users.delete({
+      await prisma.client.delete({
         where: {
           id
         }
