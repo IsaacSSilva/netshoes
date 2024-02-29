@@ -1,5 +1,7 @@
 import item from '../components/apiFakeForItem.json'
 import { Store } from '@/components/store-window'
+import { Footer } from '../components/footer/Footer'
+import { Featured } from '../components/featured/Featured'
 
 export default function Home() {
   return (
@@ -14,7 +16,6 @@ export default function Home() {
           </h1>
         </div>
       </main>
-
       <Store.Root>
         {item.Item.map(item => (
           <Store.CardBase
@@ -31,6 +32,8 @@ export default function Home() {
           </Store.CardBase>
         ))}
       </Store.Root>
+
+      <Featured />
     </>
   )
 }
