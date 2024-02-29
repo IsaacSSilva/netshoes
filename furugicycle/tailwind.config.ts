@@ -18,6 +18,14 @@ const config = {
       }
     },
     extend: {
+      backgroundImage: {
+        'featured-one':
+          "url('https://i.postimg.cc/2646ZCKL/photo-one-focus.jpg')",
+        'featured-two':
+          "url('https://i.postimg.cc/yxsNh2MQ/photo-two-focus.jpg')",
+        'featured-three':
+          "url('https://i.postimg.cc/kGsgTf9n/photo-three-focus.jpg')"
+      },
       fontFamily: {
         roboto: 'var(--roboto-ramily)',
         roboto_mono: 'var(--roboto_mono-ramily)',
