@@ -18,6 +18,7 @@ import {
 import { TableDemo } from './table_teste'
 import item from '../apiFakeForItem.json'
 import { Button } from '../ui/button'
+import Router from 'next/router'
 
 export const ShoppingcartMode = () => {
   let contItem = item.Item.length
@@ -57,7 +58,10 @@ export const ShoppingcartMode = () => {
               >
                 + Detalhes
               </Button>
-              <Button className='md:font-black font-bold font-inter w-fit md:text-base text-sm'>
+              <Button
+                className='md:font-black font-bold font-inter w-fit md:text-base text-sm'
+                onClick={() => Router.push('/check/out')}
+              >
                 Finalizar
               </Button>
             </div>
