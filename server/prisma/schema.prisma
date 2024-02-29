@@ -10,47 +10,44 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Users {
-  id        String   @id @default(cuid())
-  name      String
-  surname   String
-  email     String   @unique
-  telephone Int?
+model Client {
+  id String @id @default(cuid())
+
+  name    String
+  surname String
+  email   String
+  cpf     Int
+
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 
-  addressee Addressee[]
+  address Address[]
+
+  @@unique([email, cpf])
 }
 
-model Addressee {
-  id             String @id
-  usersId        String
-  addressee      String
-  street_address String
-  city           String
-  state          String
-  zip_code       Int
+model Address {
+  id String @id @default(cuid())
 
-  Users Users @relation(fields: [usersId], references: [id])
+  street    String
+  addressee String
+  city      String
+  state     String
+  zip_code  Int
+
+  resident Client @relation(fields: [clientId], references: [id])
+  clientId String
 }
 
 model Item {
-  id          String   @id @default(cuid())
+  id String @id @default(cuid())
+
   title       String
+  piece       Int
+  imageURL    Json
   description String
-  price       Float
-  sort        String
-  sale        Float?
-  promotion   Boolean  @default(false)
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @default(now())
+  about       String
 
-  promotions Promotion[]
-}
-
-model Promotion {
-  id Int @id @default(autoincrement())
-
-  Item   Item   @relation(fields: [itemId], references: [id])
-  itemId String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
 }
