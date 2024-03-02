@@ -1,7 +1,9 @@
+import { creatAddress } from './router-public/creat-address.js'
 import { creatClients } from './router-public/creat-clients.js'
 import { deleteClients } from './router-public/delete-clients.js'
 
-export const routerPublicUser = {
+export const routerPublicClients = {
   delete: deleteClients,
-  creat: creatClients
+  creat: creatClients,
+  address: creatAddress
 }

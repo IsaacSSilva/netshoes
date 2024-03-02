@@ -3,7 +3,7 @@ import { prisma } from '../../../../lib/prisma.js'
 import { z } from 'zod'
 
 export async function getClient(app: FastifyInstance) {
-  app.get('/users', async (request, reply) => {
+  app.get('/clients', async (request, reply) => {
     const user = await prisma.client.findMany()
 
     return reply.status(200).send(user)
@@ -11,19 +11,19 @@ export async function getClient(app: FastifyInstance) {
 }
 
 export async function getClientUnique(app: FastifyInstance) {
-  app.get('/user', async (request, reply) => {
+  app.get('/client/:id', async (request, reply) => {
     const getClient = z.object({
-      cpf: z.number().optional(),
-      id: z.string().optional(),
-      email: z.string().email().optional()
+      id: z.string().cuid()
     })
 
-    const { cpf, id, email } = getClient.parse(request.body)
+    const { id } = getClient.parse(request.params)
 
-    const user = await prisma.client.findUnique({
+    const user = await prisma.client.findMany({
       where: {
-        id,
-        OR: [{ cpf, email }]
+        id
+      },
+      include: {
+        address: {}
       }
     })
 

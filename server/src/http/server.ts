@@ -10,11 +10,14 @@ const app = fastify()
 /* routers Public */
 app.register(routerPublicClients.creat)
 app.register(routerPublicClients.delete)
+app.register(routerPublicClients.address)
 
-/* routers private */
-app.register(routerPrivateClient.get)
+// /* routers private */
+app.register(routerPrivateClient.get.All)
+app.register(routerPrivateClient.get.Unique)
 app.register(routerPrivateItem.creat)
 app.register(routerPrivateItem.get.All)
+app.register(routerPrivateItem.get.Unique)
 app.register(routerPrivateItem.delete)
 app.register(routerPrivateItem.up)
 

@@ -3,7 +3,7 @@ import { prisma } from '../../../lib/prisma.js'
 import type { FastifyInstance } from 'fastify'
 
 export async function updateItem(app: FastifyInstance) {
-  app.patch('/item/:id', async (request, reply) => {
+  app.patch('/peca/:id', async (request, reply) => {
     const idItem = z.object({
       id: z.string().cuid()
     })

@@ -3,7 +3,7 @@ import { prisma } from '../../../lib/prisma.js'
 import type { FastifyInstance } from 'fastify'
 
 export async function deleteItem(app: FastifyInstance) {
-  app.delete('/item/:id', async (request, reply) => {
+  app.delete('/peca/:id', async (request, reply) => {
     const deleteItem = z.object({
       id: z.string().cuid()
     })

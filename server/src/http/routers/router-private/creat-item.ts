@@ -1,14 +1,14 @@
 import type { FastifyInstance } from 'fastify'
 import { prisma } from '../../../lib/prisma.js'
-import { z } from 'zod'
+import { string, z } from 'zod'
 
 export async function creatItem(app: FastifyInstance) {
-  app.post('/items', async (request, reply) => {
+  app.post('/peca', async (request, reply) => {
     const creatItem = z.object({
       title: z.string(),
       description: z.string(),
       piece: z.number().int(),
-      imageURL: z.string().array(),
+      imageURL: z.array(z.string().url()),
       about: z.string()
     })
 

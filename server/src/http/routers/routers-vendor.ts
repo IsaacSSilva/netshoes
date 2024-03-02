@@ -8,8 +8,10 @@ import {
 import { updateItem } from './router-private/update-item.js'
 
 export const routerPrivateClient = {
-  get: getClient,
-  getUnique: getClientUnique
+  get: {
+    All: getClient,
+    Unique: getClientUnique
+  }
 }
 
 export const routerPrivateItem = {

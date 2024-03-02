@@ -3,7 +3,7 @@ import { prisma } from '../../../lib/prisma.js'
 import { z } from 'zod'
 
 export async function getItemAll(app: FastifyInstance) {
-  app.get('/items', async (request, reply) => {
+  app.get('/peca', async (request, reply) => {
     const item = await prisma.item.findMany()
 
     return reply.status(200).send(item)
