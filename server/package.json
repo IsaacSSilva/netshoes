@@ -2,7 +2,7 @@
   "name": "server",
   "module": "server.ts",
   "engines": {
-    "node": "20"
+    "node": "20.x"
   },
   "devDependencies": {
     "@types/bun": "latest",
