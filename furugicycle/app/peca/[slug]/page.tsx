@@ -1,9 +1,9 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import item from '../../components/apiFakeForItem.json'
+import item from '../../../components/apiFakeForItem.json'
 import { Plus, Siren } from 'lucide-react'
-import { NextRouterButton } from '../../components/NextRoutButtton'
+import { NextRouterButton } from '../../../components/NextRoutButtton'
 import {
   HoverCard,
   HoverCardContent,
