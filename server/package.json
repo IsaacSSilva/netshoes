@@ -1,17 +1,23 @@
 {
   "name": "server",
   "module": "server.ts",
+  "engines": {
+    "node": "20"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/node": "^20.11.17",
     "prisma": "^5.9.1",
+    "tsup": "^8.0.2",
     "tsx": "^4.7.1"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "dev": "tsx watch src/http/server.ts"
+    "dev": "tsx watch src/http/server.ts",
+    "build": "tsup src",
+    "start": "node dist/server.js"
   },
   "type": "module",
   "dependencies": {
