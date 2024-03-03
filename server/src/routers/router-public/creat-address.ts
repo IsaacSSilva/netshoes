@@ -1,5 +1,5 @@
 import type { FastifyInstance } from 'fastify'
-import { prisma } from '../../../lib/prisma.js'
+import { prisma } from '../../lib/prisma.js'
 import { z } from 'zod'
 
 export async function creatAddress(app: FastifyInstance) {
