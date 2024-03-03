@@ -74,3 +74,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+*::-webkit-scrollbar {
+  width: 12px; /* Largura da barra de rolagem */
+}
+
+*::-webkit-scrollbar-track {
+  background: #71717a13; /* Cor da área de rastreamento */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #e11d47f1; /* Cor do polegar da rolagem */
+  border-radius: 20px; /* Arredondamento do polegar da rolagem */
+  border: 3px solid #71717a13; /* Cria uma margem em torno do polegar da rolagem */
+}
