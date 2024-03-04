@@ -1,11 +1,11 @@
-import { creatItem } from './router-private/creat-item.js'
-import { deleteItem } from './router-private/delete-item.js'
-import { getItemAll, getItemUnique } from './router-private/get-item.js'
+import { creatItem } from '@/routers/router-private/creat-item.js'
+import { deleteItem } from '@/routers/router-private/delete-item.js'
+import { getItemAll, getItemUnique } from '@/routers/router-private/get-item.js'
 import {
   getClient,
   getClientUnique
-} from './router-private/clients/get-client.js'
-import { updateItem } from './router-private/update-item.js'
+} from '@/routers/router-private/clients/get-client.js'
+import { updateItem } from '@/routers/router-private/update-item.js'
 
 export const routerPrivateClient = {
   get: {

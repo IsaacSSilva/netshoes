@@ -2,8 +2,8 @@ import fastify from 'fastify'
 import {
   routerPrivateItem,
   routerPrivateClient
-} from './routers/routers-vendor.js'
-import { routerPublicClients } from './routers/routers-public.js'
+} from '@/routers/routers-vendor.js'
+import { routerPublicClients } from '@/routers/routers-public.js'
 
 const app = fastify()
 

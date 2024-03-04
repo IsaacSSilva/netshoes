@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { prisma } from '../../lib/prisma.js'
+import { prisma } from '@/lib/prisma.js'
 import type { FastifyInstance } from 'fastify'
 
 export async function deleteItem(app: FastifyInstance) {
