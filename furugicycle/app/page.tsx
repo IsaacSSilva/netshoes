@@ -1,7 +1,7 @@
 import item from '../components/apiFakeForItem.json'
 import { Store } from '@/components/store-window'
-import { Footer } from '../components/footer/Footer'
 import { Featured } from '../components/featured/Featured'
+import { ButtonToast } from '@/components/buttonToast/ButtonToast'
 
 export default function Home() {
   return (
@@ -32,7 +32,6 @@ export default function Home() {
           </Store.CardBase>
         ))}
       </Store.Root>
-
       <Featured />
     </>
   )
