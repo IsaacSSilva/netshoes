@@ -1,73 +1,168 @@
 # server
 
-To install dependencies:
+Este projeto foi criado usando bun init no bun v1.0.25.
+
+Para instalar dependências:
 
 ```bash
 bun install
+# ou npm istall
+# ou yarn istall
+# ou pnpm istall
 ```
 
-To run:
+Para executar:
 
 ```bash
-bun run server.ts
+bun dev
+# ou npm run dev
+# ou yarn dev
+# ou pnpm dev
 ```
 
-This project was created using `bun init` in bun v1.0.25. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+</br>
 
-node.js`
+## CRUD
 
-import type { FastifyInstance } from 'fastify'
-import { z } from 'zod'
-import { prisma } from '../../../lib/prisma.js'
+As rotas sao divisidas em duas, rotas direcionadas para Clientes e para o Logista.
 
-export async function creatClients(app: FastifyInstance) {
-  app.post('/clients', async (request, reply) => {
-    const creatclient = z.object({
-      name: z.string().toLowerCase().min(3),
-      surname: z.string().toLowerCase().min(3),
-      email: z.string().email().toLowerCase(),
-      cpf: z.number().min(11).int().optional()
-    })
+</br>
 
-    const creatAddress = z.object({
-      street: z.string().optional(),
-      addressee: z.string().optional(),
-      city: z.string().optional(),
-      state: z.string().optional(),
-      zip_code: z.number().int().min(8).optional(),
-      house_number: z.string().optional()
-    })
+### Client
 
-    const { street, addressee, city, state, zip_code, house_number } =
-      creatAddress.parse(request.body)
+##### Creat Client
 
-    const { name, surname, email, cpf } = creatclient.parse(request.body)
+criar uma Usuario como cliente.
 
-    const client = await prisma.client.create({
-      data: {
-        email,
-        name,
-        surname,
-        cpf,
-        address: {
-          create: {
-            street,
-            addressee,
-            city,
-            state,
-            zip_code,
-            house_number
-          }
-        }
-      },
-      include: {
-        address: {}
-      }
-    })
+- post
 
-    return reply.status(201).send(client)
-  })
+```http
+http://localhost:3333/clients
+```
+
+```json
+{
+  "name": "jonh", //String
+  "surname": "doe", //String
+  "email": "jonh@doe.com", //String
+  "cpf": 99999999999 //number
 }
+```
 
+##### Creat address
 
-`
+cadastrar o endereco:
+
+- post
+
+```http
+http://localhost:3333/clients/[:clientId]/address
+```
+
+```json
+{
+  "street": "",
+  "addressee": "",
+  "city": "",
+  "state": "",
+  "zip_code": 11111111,
+  "house_number": ""
+}
+```
+
+##### Get all Client
+
+puxar todas as pesquisas.
+
+- get
+
+```http
+http://localhost:3333/clients
+```
+
+##### Get Client unique
+
+puxar um client espesifico e seu endereco.
+
+- get
+
+```http
+http://localhost:3333/client/[:clientId]
+```
+
+</br>
+
+### Logista
+
+##### Creat Item
+
+criar o cadastro de um item para seu inventario.
+
+- post
+
+```http
+http://localhost:3333/peca
+```
+
+```json
+{
+	"title": "",
+	"description": "",
+	"piece": number, // Int
+	"sort": "",
+	"about": "",
+	"imageURL":[                 // Array
+		"http://banco.de/imagem" // url da imagem
+	]
+}
+```
+
+##### Get All Item
+
+puxar todos os itens do inventario.
+
+- get
+
+```http
+http://localhost:3333/peca
+```
+
+##### Get Unique Item
+
+puxando um item especifico.
+
+- get
+
+```http
+http://localhost:3333/item/[:itemId]
+```
+
+##### Delete Item
+
+deletar um item especifico.
+
+- delete
+
+```http
+http://localhost:3333/peca/[:itemId]
+```
+
+##### Update Item
+
+para atualizar parcialmente os itens.
+
+- patch
+
+```http
+http://localhost:3333/peca/[:itemId]
+```
+
+```json
+{
+  "title": ""
+  // "description": "",
+  // "piece": "",
+  // "about": "",
+  // "imageURL": [""]
+}
+```
