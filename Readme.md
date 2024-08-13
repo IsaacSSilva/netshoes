@@ -1,11 +1,9 @@
-# Furugicycle
-
-O Furugi e um e-commercer para uma loja de vestuario vintage. O reposritorio contem tanto as aplicacoes Front-end e Back-end, anbos em desenvolvimento 🚧.
+# e-commerce
 
 [API](./server/README.md)
-[Furugi ](./furugicycle/README.md)
+[Front-end ](./furugicycle/README.md)
 
-## Furugi
+## Front end
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![next](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=fff&style=for-the-badge)
