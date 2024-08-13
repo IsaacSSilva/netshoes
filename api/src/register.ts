@@ -5,6 +5,7 @@ import {
 } from '@/routers/routers-vendor.js'
 import { routerPublicClients } from '@/routers/routers-public.js'
 
+
 const app = fastify()
 
 /* routers Public */
@@ -25,11 +26,4 @@ app.get('/', () => {
   return 'Hello'
 })
 
-app
-  .listen({
-    port: process.env.PORT ? Number(process.env.PORT) : 3333,
-    host: '0.0.0.0'
-  })
-  .then(() => {
-    console.log('Runner Server HTTP! 🔥')
-  })
+export { app }
