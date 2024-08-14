@@ -1,29 +1,21 @@
 import fastify from 'fastify'
-import {
-  routerPrivateItem,
-  routerPrivateClient
-} from '@/routers/routers-vendor.js'
-import { routerPublicClients } from '@/routers/routers-public.js'
-
-
 const app = fastify()
 
-/* routers Public */
-app.register(routerPublicClients.creat)
-app.register(routerPublicClients.delete)
-app.register(routerPublicClients.address)
+import { creatAddress } from '@/src/routers/client/registration/creat-address.js'
+import { creatClients } from '@/src/routers/client/registration/creat-clients.js'
+import { deleteClients } from '@/src/routers/client/registration/delete-clients.js'
+import { getClient, getClientUnique } from './routers/privat/client/get-client.js'
+import { updateItem } from './routers/privat/update-item.js'
+import Hello from './routers/@Dev/Hello.js'
 
-// /* routers private */
-app.register(routerPrivateClient.get.All)
-app.register(routerPrivateClient.get.Unique)
-app.register(routerPrivateItem.creat)
-app.register(routerPrivateItem.get.All)
-app.register(routerPrivateItem.get.Unique)
-app.register(routerPrivateItem.delete)
-app.register(routerPrivateItem.up)
+app.register(Hello)
 
-app.get('/', () => {
-  return 'Hello'
-})
+app.register(creatAddress)
+app.register(creatClients)
+app.register(deleteClients)
+
+app.register(getClient)
+app.register(getClientUnique)
+app.register(updateItem)
 
 export { app }
