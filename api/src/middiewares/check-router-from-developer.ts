@@ -1,8 +1,8 @@
 import type { FastifyReply, FastifyRequest } from "fastify"
+import { env } from "@/env.js";
 
-export async function checkSessionDeveloper(request: FastifyRequest, reply: FastifyReply) {
-
-  if(request.hostname != 'localhost:3333'){
+export async function CheckSessionDeveloper(request: FastifyRequest, reply: FastifyReply) {
+  if(env.NODE_ENV === 'dev'){
     console.log(request.hostname);
     
     return reply.status(401).send({ error: 'Unauthorized.'})

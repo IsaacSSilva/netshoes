@@ -1,9 +1,9 @@
+import { app } from './app.js'
 import { env } from './lib/env.js'
-import { app } from './register.js'
 
 app
   .listen({
-    port: env.port,
+    port: env.PORT,
     host: '0.0.0.0'
   })
   .then(() => {

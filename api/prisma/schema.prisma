@@ -7,45 +7,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Client {
-  id String @id @default(cuid())
-
-  name    String
-  surname String?
-  email   String
-  cpf     Float?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-
-  address Address[]
-
-  @@unique([email, cpf])
-}
-
-model Address {
-  id String @id @default(cuid())
-
-  street       String
-  addressee    String
-  city         String
-  state        String
-  house_number String
-  zip_code     Int
-
-  resident Client @relation(fields: [clientId], references: [id])
-  clientId String
-}
-
-model Item {
-  id String @id @default(cuid())
-
+model Product {
+  id          Int    @id @default(autoincrement())
   title       String
-  piece       Int
-  imageURL    String[]
   description String
-  about       String
+  cost        Float
+  url_img     String
+  amount      Int
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
+  @@map("products")
 }

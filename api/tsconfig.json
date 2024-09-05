@@ -1,29 +1,24 @@
 {
   "compilerOptions": {
-    "lib": [
-      "ES2023"
-    ],
-    "target": "ES2022",
-    "module": "Node16",
-    "moduleDetection": "force",
-    "allowJs": true,
-    /* Bundler mode */
-    // "moduleResolution": "bundler",
-    "esModuleInterop": true,
-    // "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "noEmit": true,
-    /* Linting */
-    "skipLibCheck": true,
-    "strict": true,
-    "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true,
+
+    /* Language and Environment */
+    "target": "ES2023",                                  
+    "lib": ["ES2023"],                                       
+    
+    /* Modules */
+    "module": "Node16",                                
+    "baseUrl": "./",                                  
     "paths": {
       "@/*": [
-        "./*",
-        "./src/lib/*",
-        "./src/*"
+        "./src/*",
+        "./src/lib/*"
       ]
-    }
+    },                                     
+    "esModuleInterop": true,                             
+    "forceConsistentCasingInFileNames": true,           
+
+    /* Type Checking */
+    "strict": true,                                      
+    "skipLibCheck": true                                 
   }
 }

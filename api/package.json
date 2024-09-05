@@ -1,28 +1,33 @@
 {
   "name": "server",
   "module": "server.ts",
+  "type": "module",
   "engines": {
-    "node": "20"
-  },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "@types/node": "^20.11.17",
-    "prisma": "^5.9.1",
-    "tsup": "^8.0.2",
-    "tsx": "^4.7.1"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
+    "node": "20.16.0"
   },
   "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "build": "tsup src",
-    "start": "node dist/server.cjs"
+    "build": "tsup src --out-dit build",
+    "start": "node build/server.js",
+    "start:dev": "tsx watch src/server.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui"
   },
-  "type": "module",
   "dependencies": {
-    "@prisma/client": "latest",
-    "fastify": "^4.26.1",
-    "zod": "^3.22.4"
+    "@prisma/client": "5.18.0",
+    "fastify": "4.26.1",
+    "zod": "3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.15",
+    "@vitest/coverage-v8": "2.0.5",
+    "dotenv": "16.4.5",
+    "prisma": "5.19.1",
+    "tsup": "8.2.4",
+    "tsx": "4.17.0",
+    "typescript": "5.5.4",
+    "vite-tsconfig-paths": "5.0.1",
+    "vitest": "2.0.5"
   }
 }
