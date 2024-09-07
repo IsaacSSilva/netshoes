@@ -3,3 +3,5 @@ routes.http
 node_modules
 
 .env
+
+coverage
