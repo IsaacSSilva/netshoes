@@ -1,5 +1,5 @@
 import type { Prisma, Product } from "@prisma/client";
 
-export interface RegisterProductRepository {
+export interface ProductRepository {
   create(data: Prisma.ProductCreateInput): Promise<Product>
 }

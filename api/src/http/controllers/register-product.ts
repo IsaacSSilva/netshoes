@@ -1,7 +1,7 @@
 import type { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
-import { ProductUseCase as Product } from "@/use-cases/register-product-use-cases.js";
-import { ProductRepository } from "@/repositories/prisma/prisma-product-repository.js";
+import { ProductUseCase as Product } from "@/use-cases/product-use-cases.js";
+import { PrismaProductRepository } from "@/repositories/prisma/product-repository.js";
 
 export async function RegisterProduct(request: FastifyRequest, reply: FastifyReply ) {
 
@@ -15,7 +15,7 @@ export async function RegisterProduct(request: FastifyRequest, reply: FastifyRep
 
   const { title, description, cost, url_img, amount, } = productSchemaBody.parse(request.body)
 
-  const ProductReporisoty = new ProductRepository()
+  const ProductReporisoty = new PrismaProductRepository()
 
   const registerProduct = new Product(ProductReporisoty)
 

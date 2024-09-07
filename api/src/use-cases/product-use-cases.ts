@@ -1,4 +1,4 @@
-import { ProductRepository } from "@/repositories/prisma/prisma-product-repository.js";
+import { PrismaProductRepository } from "@/repositories/prisma/product-repository.js";
 import type { Product } from "@prisma/client";
 
 
@@ -16,7 +16,7 @@ interface ProductUseCaseResponse {
 
 export class ProductUseCase{
 
-  constructor(private productRepository: ProductRepository) {}
+  constructor(private productRepository: PrismaProductRepository) {}
 
   async create({ cost, description, title, url_img, amount }: CreateProductUseCase): Promise<ProductUseCaseResponse> {
     
